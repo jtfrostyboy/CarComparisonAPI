@@ -1,0 +1,14 @@
+#wAll {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+#stats1 {
+    background-color: brown;
+}
+
+#stats2 {
+    background-color: aquamarine;
+}
