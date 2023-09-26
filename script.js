@@ -5,7 +5,7 @@ button1.addEventListener('click', async() => {
 
 let textInput1 = document.querySelector('#textInput1').value
 let weaponsCost1 = document.querySelector('#cost1')
-
+let weaponsImg1 = document.querySelector('#image1')
 
 let response1 = await axios.get('https://valorant-api.com/v1/weapons')
 console.log(response1)
@@ -15,8 +15,9 @@ weapons1 = response1.data.data
 for (let i = 0; i < weapons1.length; i++) {
     if (textInput1 == weapons1[i].displayName) {
         weaponsCost1.innerHTML = `Weapon 1 Cost: ${weapons1[i].shopData.cost}`
+        weaponsImg1.src = weapons1[i].displayIcon
  
-        weaponSkins1 = weapons1[i].skins
+        //weaponSkins1 = weapons1[i].skins
 
 
         // for (let j = 0; j < weaponSkins1.length; j++){
@@ -42,7 +43,7 @@ button2.addEventListener('click', async() => {
 
 let textInput1 = document.querySelector('#textInput2').value
 let weaponsCost2 = document.querySelector('#cost2')
-
+let weaponsImg2 = document.querySelector('#image2')
 
 let response2 = await axios.get('https://valorant-api.com/v1/weapons')
 console.log(response2)
@@ -52,9 +53,9 @@ weapons2 = response2.data.data
 for (let i = 0; i < weapons2.length; i++) {
     if (textInput1 == weapons2[i].displayName) {
         weaponsCost2.innerHTML = `Weapon 2 Cost: ${weapons2[i].shopData.cost}`
+        weaponsImg2.src = weapons2[i].displayIcon
 
-
-        weaponSkins2 = weapons2[i].skins
+        //weaponSkins2 = weapons2[i].skins
 
 
         // for (let j = 0; j < weaponSkins2.length; j++){
