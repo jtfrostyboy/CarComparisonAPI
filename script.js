@@ -114,7 +114,6 @@ for (let i = 0; i < weapons2.length; i++) {
 // Weapon type data.data[i].shopData.category
 
 
-
 })
 
 
