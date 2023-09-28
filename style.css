@@ -4,11 +4,54 @@
     justify-content: space-around;
 }
 
+.wInfo {
+    color: black;
+}
+
+img {
+    height: auto;
+    width: 80%;
+    
+}
+#stats1 *{
+    padding: 5px;
+}
 
 #stats1 {
-    background-color: brown;
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+    
 }
 
 #stats2 {
-    background-color: aquamarine;
+    position: relative;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.cost {
+    font-size: 20px;
+}
+
+body {
+    color: white;
+    background-image: url(https://1000logos.net/wp-content/uploads/2022/09/Valorant-Logo-768x432.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-position-y: bottom;
+    /* background-image: linear-gradient(90deg, red,blue);
+    width: 100%; */
+    height: 100vh;
 }

@@ -50,6 +50,31 @@ let wMag1 = document.querySelector('#magSize1')
 let wFireRate1 = document.querySelector('#fireRate1')
 let wReloadSpd1 = document.querySelector('#reloadSpd1')
 
+//Range 1
+let rng1a = document.querySelector('#rng1a')
+let headDmg1a = document.querySelector('#headDmg1a')
+let bodyDmg1a = document.querySelector('#bodyDmg1a')
+let legDmg1a = document.querySelector('#legDmg1a')
+
+//Range 2
+let rng1b = document.querySelector('#rng1b')
+let headDmg1b = document.querySelector('#headDmg1b')
+let bodyDmg1b = document.querySelector('#bodyDmg1b')
+let legDmg1b = document.querySelector('#legDmg1b')
+
+//Range 3
+let rng1c = document.querySelector('#rng1c')
+let headDmg1c = document.querySelector('#headDmg1c')
+let bodyDmg1c = document.querySelector('#bodyDmg1c')
+let legDmg1c = document.querySelector('#legDmg1c')
+
+
+
+
+
+
+
+
 //2nd Weapon
 let selection2 = document.querySelector('#weapon2-select').value
 let weaponsCost2 = document.querySelector('#cost2')
@@ -59,10 +84,12 @@ let wType2 = document.querySelector('#type2')
 let wMag2 = document.querySelector('#magSize2')
 let wFireRate2 = document.querySelector('#fireRate2')
 let wReloadSpd2 = document.querySelector('#reloadSpd2')
+let wDmgRng2 = document.querySelector('#dmgRng2')
+
 
 //API Calls
 let response1 = await axios.get('https://valorant-api.com/v1/weapons')
-console.log(response1)
+//console.log(response1)
 
 weapons1 = response1.data.data
 
@@ -76,17 +103,52 @@ for (let i = 0; i < weapons1.length; i++) {
         wFireRate1.innerHTML = `Fire Rate: ${weapons1[i].weaponStats.fireRate}`
         wReloadSpd1.innerHTML = `Reload Speed: ${weapons1[i].weaponStats.reloadTimeSeconds} seconds`
 
+        //DMG Range Stats
+        rngArray = weapons1[i].weaponStats.damageRanges
+        console.log(rngArray)
 
+        if (rngArray[0] != null) {
+            rng1a.innerHTML = `Range: ${rngArray[0].rangeStartMeters} - ${rngArray[0].rangeEndMeters}`
+            headDmg1a.innerHTML = `Head ${rngArray[0].headDamage} Damage`
+            bodyDmg1a.innerHTML = `Body ${rngArray[0].bodyDamage} Damage`
+            legDmg1a.innerHTML =  `Leg ${rngArray[0].legDamage} Damage`
+        } else {
+            rng1a.innerHTML = ``
+            headDmg1a.innerHTML = ``
+            bodyDmg1a.innerHTML = ``
+            legDmg1a.innerHTML =  ``
+        }
 
+        if (rngArray[1] != null) {
+            rng1b.innerHTML = `Range: ${rngArray[1].rangeStartMeters} - ${rngArray[1].rangeEndMeters}`
+            headDmg1b.innerHTML = `Head ${rngArray[1].headDamage} Damage`
+            bodyDmg1b.innerHTML = `Body ${rngArray[1].bodyDamage} Damage`
+            legDmg1b.innerHTML =  `Leg ${rngArray[1].legDamage} Damage`
+        } else {
+            rng1b.innerHTML = ``
+            headDmg1b.innerHTML = ``
+            bodyDmg1b.innerHTML = ``
+            legDmg1b.innerHTML =  ``
+        }
 
-
+        if (rngArray[2] != null) {
+            rng1c.innerHTML = `Range: ${rngArray[2].rangeStartMeters} - ${rngArray[2].rangeEndMeters}`
+            headDmg1c.innerHTML = `Head ${rngArray[2].headDamage} Damage`
+            bodyDmg1c.innerHTML = `Body ${rngArray[2].bodyDamage} Damage`
+            legDmg1c.innerHTML =  `Leg ${rngArray[2].legDamage} Damage`
+        }  else {
+            rng1c.innerHTML = ``
+            headDmg1c.innerHTML = ``
+            bodyDmg1c.innerHTML = ``
+            legDmg1c.innerHTML =  ``
+        }
 
 
 
     }
 }
 let response2 = await axios.get('https://valorant-api.com/v1/weapons')
-console.log(response2)
+//console.log(response2)
 
 weapons2 = response2.data.data
 
@@ -100,7 +162,12 @@ for (let i = 0; i < weapons2.length; i++) {
         wFireRate2.innerHTML = `Fire Rate: ${weapons2[i].weaponStats.fireRate}`
         wReloadSpd2.innerHTML = `Reload Speed: ${weapons2[i].weaponStats.reloadTimeSeconds} seconds`
 
-
+        for (let j = 0; j < weapons2[i].weaponStats.damageRanges.length; j++) {
+            //console.log(weapons2[i].weaponStats.damageRanges[j])
+            wDmgRng2.innerHTML = `${weapons2[i].weaponStats.damageRanges[j]}`
+        
+            
+        }
 
 
 
@@ -116,7 +183,12 @@ for (let i = 0; i < weapons2.length; i++) {
 
 })
 
-
+// for (let j = 0; j < weapons1[i].weaponStats.damageRanges.length; j++) {
+//     console.log(weapons1[i].weaponStats.damageRanges[j])
+//     wDmgRng1.append(" " + weapons1[i].weaponStats.damageRanges[j].rangeStartMeters + " - " + weapons1[i].weaponStats.damageRanges[j].rangeEndMeters + " ")
+    
+    
+// }
 
 
 
