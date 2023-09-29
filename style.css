@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Valorant';
+    src: url(Fonts/ValorantFont.ttf);
+}
+
 header {
     display: flex;
     justify-content: center;
@@ -25,6 +30,7 @@ img {
 #stats2 *{
     padding: 5px;
 }
+
 
 #stats1 {
     position: relative;
@@ -65,6 +71,7 @@ img {
 }
 
 body {
+    font-family: 'Valorant';
     color: white;
     background-image: url(https://1000logos.net/wp-content/uploads/2022/09/Valorant-Logo-768x432.jpg);
     background-repeat: no-repeat;
