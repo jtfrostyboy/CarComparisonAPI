@@ -1,6 +1,6 @@
 # ValorantWeaponComparison
 Check Valorant Weapon stas against each other
-<img src='https://www.esports.net/wp-content/uploads/2021/11/Valorant-Weapons.jpg' alt = "Valorant Weapons">
+<img src='https://preview.redd.it/h33l11zh32671.png?width=3840&format=png&auto=webp&s=109bb60d00c90faf71f9b879f00b4a5ae6e51146' alt = "Valorant Weapons">
 
 ## Design
 - The will be two search bars to look up each weapon
