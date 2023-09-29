@@ -50,25 +50,41 @@ let wMag1 = document.querySelector('#magSize1')
 let wFireRate1 = document.querySelector('#fireRate1')
 let wReloadSpd1 = document.querySelector('#reloadSpd1')
 
-//Range 1
+//Range 1a
 let rng1a = document.querySelector('#rng1a')
 let headDmg1a = document.querySelector('#headDmg1a')
 let bodyDmg1a = document.querySelector('#bodyDmg1a')
 let legDmg1a = document.querySelector('#legDmg1a')
 
-//Range 2
+//Range 1b
 let rng1b = document.querySelector('#rng1b')
 let headDmg1b = document.querySelector('#headDmg1b')
 let bodyDmg1b = document.querySelector('#bodyDmg1b')
 let legDmg1b = document.querySelector('#legDmg1b')
 
-//Range 3
+//Range 1c
 let rng1c = document.querySelector('#rng1c')
 let headDmg1c = document.querySelector('#headDmg1c')
 let bodyDmg1c = document.querySelector('#bodyDmg1c')
 let legDmg1c = document.querySelector('#legDmg1c')
 
+//Range 2a
+let rng2a = document.querySelector('#rng2a')
+let headDmg2a = document.querySelector('#headDmg2a')
+let bodyDmg2a = document.querySelector('#bodyDmg2a')
+let legDmg2a = document.querySelector('#legDmg2a')
 
+//Range 1b
+let rng2b = document.querySelector('#rng2b')
+let headDmg2b = document.querySelector('#headDmg2b')
+let bodyDmg2b = document.querySelector('#bodyDmg2b')
+let legDmg2b = document.querySelector('#legDmg2b')
+
+//Range 2c
+let rng2c = document.querySelector('#rng2c')
+let headDmg2c = document.querySelector('#headDmg2c')
+let bodyDmg2c = document.querySelector('#bodyDmg2c')
+let legDmg2c = document.querySelector('#legDmg2c')
 
 
 
@@ -162,11 +178,43 @@ for (let i = 0; i < weapons2.length; i++) {
         wFireRate2.innerHTML = `Fire Rate: ${weapons2[i].weaponStats.fireRate}`
         wReloadSpd2.innerHTML = `Reload Speed: ${weapons2[i].weaponStats.reloadTimeSeconds} seconds`
 
-        for (let j = 0; j < weapons2[i].weaponStats.damageRanges.length; j++) {
-            //console.log(weapons2[i].weaponStats.damageRanges[j])
-            wDmgRng2.innerHTML = `${weapons2[i].weaponStats.damageRanges[j]}`
-        
-            
+        rngArray = weapons2[i].weaponStats.damageRanges
+        console.log(rngArray)
+
+        if (rngArray[0] != null) {
+            rng2a.innerHTML = `Range: ${rngArray[0].rangeStartMeters} - ${rngArray[0].rangeEndMeters}`
+            headDmg2a.innerHTML = `Head ${rngArray[0].headDamage} Damage`
+            bodyDmg2a.innerHTML = `Body ${rngArray[0].bodyDamage} Damage`
+            legDmg2a.innerHTML =  `Leg ${rngArray[0].legDamage} Damage`
+        } else {
+            rng2a.innerHTML = ``
+            headDmg2a.innerHTML = ``
+            bodyDmg2a.innerHTML = ``
+            legDmg2a.innerHTML =  ``
+        }
+
+        if (rngArray[1] != null) {
+            rng2b.innerHTML = `Range: ${rngArray[1].rangeStartMeters} - ${rngArray[1].rangeEndMeters}`
+            headDmg2b.innerHTML = `Head ${rngArray[1].headDamage} Damage`
+            bodyDmg2b.innerHTML = `Body ${rngArray[1].bodyDamage} Damage`
+            legDmg2b.innerHTML =  `Leg ${rngArray[1].legDamage} Damage`
+        } else {
+            rng2b.innerHTML = ``
+            headDmg2b.innerHTML = ``
+            bodyDmg2b.innerHTML = ``
+            legDmg2b.innerHTML =  ``
+        }
+
+        if (rngArray[2] != null) {
+            rng2c.innerHTML = `Range: ${rngArray[2].rangeStartMeters} - ${rngArray[2].rangeEndMeters}`
+            headDmg2c.innerHTML = `Head ${rngArray[2].headDamage} Damage`
+            bodyDmg2c.innerHTML = `Body ${rngArray[2].bodyDamage} Damage`
+            legDmg2c.innerHTML =  `Leg ${rngArray[2].legDamage} Damage`
+        }  else {
+            rng2c.innerHTML = ``
+            headDmg2c.innerHTML = ``
+            bodyDmg2c.innerHTML = ``
+            legDmg2c.innerHTML =  ``
         }
 
 
@@ -174,21 +222,10 @@ for (let i = 0; i < weapons2.length; i++) {
      
     }
 }
-// Weapon Image data.data[i].displayIcon
-// Display Name data.data[i].displayName
-// Weapon Stats data.data[i].weaponStats
-// Weapon Cost data.data[i].shopData.cost
-// Weapon type data.data[i].shopData.category
-
 
 })
 
-// for (let j = 0; j < weapons1[i].weaponStats.damageRanges.length; j++) {
-//     console.log(weapons1[i].weaponStats.damageRanges[j])
-//     wDmgRng1.append(" " + weapons1[i].weaponStats.damageRanges[j].rangeStartMeters + " - " + weapons1[i].weaponStats.damageRanges[j].rangeEndMeters + " ")
-    
-    
-// }
+
 
 
 
